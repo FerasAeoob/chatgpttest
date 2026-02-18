@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Golan Heights | Nature, Adventure & Local Experiences</title>
+    <meta
+      name="description"
+      content="Discover the Golan Heights with curated places, hiking routes, wineries, restaurants, springs, and adventure activities."
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#" class="logo">Discover <span>Golan Heights</span></a>
+        <nav>
+          <a href="#places">Places</a>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./admin/index.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-overlay">
+          <div class="container">
+            <h1>Explore the Wild Beauty of the Golan Heights</h1>
+            <p>From waterfalls and basalt cliffs to local food and wineries — all in one place.</p>
+            <a href="#places" class="btn-primary">Start Discovering</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro container">
+        <h2>Welcome to Discover Golan Heights</h2>
+        <p>
+          Your local digital guide for unforgettable experiences in northern Israel. Find nature reserves,
+          vineyards, restaurants, springs, and adventure activities with practical information for your visit.
+        </p>
+      </section>
+
+      <section class="categories container">
+        <h2>Categories</h2>
+        <div id="categoryList" class="category-grid"></div>
+      </section>
+
+      <section id="places" class="places container">
+        <div class="section-header">
+          <h2>Featured Places</h2>
+          <div class="filters">
+            <input id="searchInput" type="search" placeholder="Search by place name..." />
+            <select id="categoryFilter">
+              <option value="">All categories</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="placesGrid" class="places-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© <span id="year"></span> Discover Golan Heights • Ready for English & Hebrew content.</p>
+      </div>
+    </footer>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

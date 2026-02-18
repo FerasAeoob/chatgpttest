@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Discover Golan Heights</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="../index.html" class="logo">Discover <span>Golan Heights</span></a>
+        <nav>
+          <a href="../index.html">Public Site</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-content">
+      <h1>Admin Dashboard</h1>
+      <p id="adminStatus">Login to manage places, categories, and publication status.</p>
+
+      <section class="admin-panel" id="loginPanel">
+        <h2>Secure Login</h2>
+        <form id="loginForm" class="grid-2">
+          <label>Email <input type="email" name="email" required /></label>
+          <label>Password <input type="password" name="password" required /></label>
+          <button type="submit">Login</button>
+        </form>
+      </section>
+
+      <div id="adminApp" hidden>
+        <section class="admin-panel">
+          <h2>Overview</h2>
+          <p><strong>Total Places:</strong> <span id="totalPlaces">0</span></p>
+          <p><strong>Total Categories:</strong> <span id="totalCategories">0</span></p>
+          <button id="logoutBtn" class="secondary">Logout</button>
+        </section>
+
+        <section class="admin-wrap">
+          <article class="admin-panel">
+            <h3>Manage Categories</h3>
+            <form id="categoryForm">
+              <label>English Name <input name="nameEn" required /></label>
+              <label>Hebrew Name <input name="nameHe" /></label>
+              <label>Slug <input name="slug" required placeholder="nature-hiking" /></label>
+              <label><input name="isActive" type="checkbox" checked /> Active</label>
+              <button type="submit">Add Category</button>
+            </form>
+            <div id="categoryAdminList"></div>
+          </article>
+
+          <article class="admin-panel">
+            <h3>Add / Edit Place</h3>
+            <form id="placeForm" enctype="multipart/form-data" class="grid-2">
+              <input type="hidden" name="placeId" />
+              <label>Title (EN) <input name="titleEn" required /></label>
+              <label>Title (HE) <input name="titleHe" /></label>
+              <label>Description (EN) <textarea name="descriptionEn" required></textarea></label>
+              <label>Description (HE) <textarea name="descriptionHe"></textarea></label>
+              <label>Location Name <input name="locationName" required /></label>
+              <label>Google Maps Embed URL <input name="googleMapsEmbed" required /></label>
+              <label>Opening Hours <input name="openingHours" /></label>
+              <label>Contact Info <input name="contactInfo" /></label>
+              <label>Price Info <input name="priceInfo" /></label>
+              <label>Category <select name="category" id="placeCategorySelect" required></select></label>
+              <label>Main Image <input name="mainImage" type="file" accept="image/*" /></label>
+              <label>Gallery Images <input name="gallery" type="file" accept="image/*" multiple /></label>
+              <label><input name="featured" type="checkbox" /> Featured</label>
+              <label><input name="isPublished" type="checkbox" checked /> Published</label>
+              <button type="submit">Save Place</button>
+              <button type="button" id="clearPlaceForm" class="secondary">Clear Form</button>
+            </form>
+          </article>
+        </section>
+
+        <section class="admin-panel">
+          <h3>Places</h3>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="placeRows"></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="./admin.js"></script>
+  </body>
+</html>
